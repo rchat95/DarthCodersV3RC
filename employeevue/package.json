@@ -10,6 +10,7 @@
     "axios": "^0.26.1",
     "bootstrap": "^5.3.2",
     "core-js": "^3.6.5",
+    "semantic-ui-css": "^2.5.0",
     "vue": "^3.0.0",
     "vue-router": "^4.0.0-0",
     "vuex": "^4.0.0-0"

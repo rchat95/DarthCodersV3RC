@@ -1,4 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
+import Login from '../views/Login.vue'
 import Home from '../views/Home.vue'
 import Employee from '../views/Employee.vue'
 import EmployeeForm from '../views/EmployeeForm.vue'
@@ -8,6 +9,11 @@ import EmployeeDeleteForm from '../views/EmployeeDeleteForm.vue'
 const routes = [
   {
     path: '/',
+    name: 'Login',
+    component: Login
+  },
+  {
+    path: '/home',
     name: 'Home',
     component: Home
   },
