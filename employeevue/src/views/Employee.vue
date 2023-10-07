@@ -1,7 +1,7 @@
 <template>
   <div class="container">
       <h1 class="text-center"> Employee LIst</h1>
-      <table class="table table-striped">
+      <table class="ui celled striped table">
         <thead>
             <th>
                <input type="checkbox" v-model="allSelected" @change="selectAll"></th>

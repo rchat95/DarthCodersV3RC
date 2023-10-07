@@ -1,24 +1,24 @@
 <template>
-    <div class="container">
+    <div class="ui container">
            <h2>Employee Form</h2>  <hr/>
-       <form @submit.prevent="onCreatePost">
+       <form @submit.prevent="onCreatePost" class="ui form">
             
-           <div class="form-group">
+           <div class="field">
                <label>First Name</label>
                <input type="text" class="form-control" v-model="firstName" placeholder="firstName">
            </div>
                 
-            <div class="form-group">
+            <div class="field">
                <label for="lastName">Last Name</label>
                <input type="text" class="form-control" v-model="lastName" placeholder="lastName">
             </div>
   
-            <div class="form-group">
+            <div class="field">
                <label for="Email">Email</label>
                <input type="email" class="form-control" v-model="email" placeholder="Email">
             </div>
             
-            <button type="submit" class="mt-3">Register</button>
+            <button type="submit" class="ui primary button">Register</button>
         </form>
 
     </div>
