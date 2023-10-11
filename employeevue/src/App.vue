@@ -1,9 +1,9 @@
 <template>
   <div id="nav">
-    <router-link to="/">Login</router-link> |
-    <router-link to="/home">Home</router-link> |
-    <router-link to="/employee">Employee List</router-link> |
-    <router-link to="/employeeForm"> Employee Registration Form</router-link>
+<!--    <router-link to="/">Login</router-link> |-->
+<!--    <router-link to="/home">Home</router-link> |-->
+<!--    <router-link to="/employee">Employee List</router-link> |-->
+<!--    <router-link to="/employeeForm"> Employee Registration Form</router-link>-->
   </div>
   <router-view/>
 </template>
@@ -13,6 +13,14 @@ import Employee from "@/views/Employee.vue";
 
 export default {
   name: 'App',
+  data() {
+    return {
+      isLoggedIn: false
+    }
+  },
+  created() {
+    console.log("isLoggedIn = " + this.isLoggedIn)
+  },
   components: {
     Employee
   }

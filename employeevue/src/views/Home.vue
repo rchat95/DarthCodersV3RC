@@ -1,4 +1,11 @@
 <template>
+  <div id="nav">
+    <!--    <router-link to="/">Login</router-link> |-->
+        <router-link to="/home">Home</router-link> |
+        <router-link to="/employee">Employee List</router-link> |
+        <router-link to="/employeeForm"> Employee Registration Form</router-link>
+  </div>
+  <router-view/>
   <div class="home">
     <img alt="Vue logo" src="../assets/Barclays-Logo.png">
     <br>
