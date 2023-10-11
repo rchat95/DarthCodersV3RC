@@ -6,6 +6,7 @@ import EmployeeForm from '../views/EmployeeForm.vue'
 import EmployeeUpdateForm from '../views/EmployeeUpdateForm.vue'
 import EmployeeDeleteForm from '../views/EmployeeDeleteForm.vue'
 import SignUp from "../views/SignUp.vue";
+import AddCase from "../views/AddCase.vue";
 
 const routes = [
   {
@@ -17,6 +18,11 @@ const routes = [
     path: '/signup',
     name: 'SignUp',
     component: SignUp
+  },
+  {
+    path: '/addcase',
+    name: 'AddCase',
+    component: AddCase
   },
   {
     path: '/home',

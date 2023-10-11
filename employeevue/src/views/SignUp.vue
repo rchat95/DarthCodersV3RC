@@ -33,8 +33,9 @@
                 <label>Gender</label>
                 <select>
                   <option value="">Please select your gender</option>
-                  <option value="1">Male</option>
                   <option value="0">Female</option>
+                  <option value="1">Male</option>
+                  <option value="1">Male</option>
                 </select>
               </div>
               <div class="required field">
@@ -53,7 +54,7 @@
               </div>
               <button class="ui primary labeled icon button" type="button" @click="signUpClick">
                 <i class="user circle icon"></i>
-                Register
+                Sign Up
               </button>
               <button class="ui pink labeled icon button" type="button" @click="loginClick">
                 <i class="unlock alternate icon"></i>
@@ -71,7 +72,9 @@
 export default {
   name: 'SignUp',
   data() {
-    return {}
+    return {
+      signUpFailed: false
+    }
   },
   methods: {
     loginClick() {

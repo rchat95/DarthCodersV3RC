@@ -38,6 +38,8 @@
     </div>
   </div>
 
+  <div class="ui star rating" data-rating="3"></div>
+
 </template>
 
 <script>
@@ -63,7 +65,9 @@ export default {
 
 }
 
+
 </script>
+
 
 <style scoped>
 
