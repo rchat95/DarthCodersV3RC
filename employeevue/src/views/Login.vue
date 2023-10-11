@@ -10,7 +10,7 @@
           <i class="lock icon"></i>
           <div class="content">
             <div class="header">
-              Login failed!
+              Login failed!!!!
             </div>
             <p>You might have misspelled your username or password!</p>
           </div>
