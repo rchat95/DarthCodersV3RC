@@ -202,11 +202,11 @@ export default {
         this.fieldError = true
         return
       }
-      if (this.phoneNumber.length !== 10 || !/^\d+$/.test(this.phoneNumber)) {
-        this.errorField = "Phone number"
-        this.fieldError = true
-        return
-      }
+      // if (this.phoneNumber.length !== 10 || !/^\d+$/.test(this.phoneNumber)) {
+      //   this.errorField = "Phone number"
+      //   this.fieldError = true
+      //   return
+      // }
       if (!this.validateForm()) {
         return
       }
