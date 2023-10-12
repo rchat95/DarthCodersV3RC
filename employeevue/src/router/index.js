@@ -1,10 +1,14 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Login from '../views/Login.vue'
 import Home from '../views/Home.vue'
+import CaseDetails from "@/views/CaseDetails.vue";
 import Employee from '../views/Employee.vue'
 import EmployeeForm from '../views/EmployeeForm.vue'
 import EmployeeUpdateForm from '../views/EmployeeUpdateForm.vue'
 import EmployeeDeleteForm from '../views/EmployeeDeleteForm.vue'
+
+import Client from "../views/Client.vue"
+
 import SignUp from "../views/SignUp.vue";
 import AddCase from "../views/AddCase.vue";
 
@@ -23,6 +27,16 @@ const routes = [
     path: '/addcase',
     name: 'AddCase',
     component: AddCase
+  },
+  {
+    path: '/case',
+    name: 'CaseDetails',
+    component: CaseDetails
+  },
+  {
+    path: '/client',
+    name: 'Client',
+    component: Client
   },
   {
     path: '/home',

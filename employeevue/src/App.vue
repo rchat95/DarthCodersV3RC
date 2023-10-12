@@ -10,6 +10,7 @@
 
 <script>
 import Employee from "@/views/Employee.vue";
+import CaseDetails from "@/views/CaseDetails.vue";
 
 export default {
   name: 'App',
@@ -22,6 +23,7 @@ export default {
     console.log("isLoggedIn = " + this.isLoggedIn)
   },
   components: {
+    CaseDetails,
     Employee
   }
 }

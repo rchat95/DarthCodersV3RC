@@ -42,6 +42,7 @@
 
 </template>
 
+
 <script>
 export default {
   name: 'Login',
@@ -54,7 +55,7 @@ export default {
     loginClick() {
       console.log("Login clicked!")
       //TO BE CHANGED!
-      this.$router.push('/home')
+      this.$router.push('/case')
     },
     goToRegister() {
       console.log("Go to Sign Up page!")
