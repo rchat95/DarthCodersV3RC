@@ -31,6 +31,12 @@
                 <i class="user circle icon"></i>
                 Register for an account
               </button>
+              <div style="margin-top: 10px">
+                <button class="ui green labeled icon button" type="button" @click="addCase">
+                  <i class="folder open icon"></i>
+                  Submit referral
+                </button>
+              </div>
             </form>
           </div>
         </div>
@@ -55,13 +61,15 @@ export default {
     loginClick() {
       console.log("Login clicked!")
       //TO BE CHANGED!
-      this.$router.push('/case')
+      this.$router.push('/client')
     },
     goToRegister() {
       console.log("Go to Sign Up page!")
       this.$router.push('/signup')
-
-    }
+    },
+    addCase() {
+      this.$router.push('/addcase')
+    },
   }
 
 }
