@@ -35,7 +35,7 @@
                   <option value="">Please select your gender</option>
                   <option value="0">Female</option>
                   <option value="1">Male</option>
-                  <option value="1">Male</option>
+                  <option value="1">Other</option>
                 </select>
               </div>
               <div class="required field">

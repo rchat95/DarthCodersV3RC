@@ -3,7 +3,7 @@
     <h1>Add Case</h1>
     <div class="ui centered grid container">
       <div class="nine wide column">
-        <div class="ui fluid card">
+        <div class="ui fluid card" v-show="showForm">
           <div class="content">
             <form class="ui form" @submit.prevent="submitCase" method="POST">
               <div class="grouped fields">
@@ -141,8 +141,27 @@
           <i class="check icon"></i>
           <div class="content">
             <div class="header">
-              Case created successfully!
+              Case created successfully for {{ this.firstName }} {{ this.lastName}}!
             </div>
+          </div>
+        </div>
+        <div v-show="checkUserExists">
+          <div class="ui icon warning message" >
+            <i class="copy outline icon"></i>
+            <div class="content">
+              <div class="header">
+                User profile already exists. Do you want to continue adding this case against user {{ this.firstName }}
+                {{ this.lastName }}?
+              </div>
+            </div>
+          </div>
+          <div>
+            <button class="ui green button" @click="submitCaseForExistingUser" type="button">
+              Continue Submit
+            </button>
+            <button class="ui button" @click="backToForm" type="button">
+              Back to add case form
+            </button>
           </div>
         </div>
       </div>
@@ -176,7 +195,10 @@ export default {
       formSubmitError: false,
       validationPassed: false,
       fieldError: false,
-      dobMax: ''
+      dobMax: '',
+      checkUserExists: false,
+      showForm: true,
+      formSubmitSuccess: false
     }
   },
   created() {
@@ -197,19 +219,26 @@ export default {
   },
   methods: {
     submitCase() {
+      this.formSubmitSuccess = false
       if (!this.validateEmail(this.email)) {
         this.errorField = "Email"
         this.fieldError = true
+        console.log("Invalid email")
         return
       }
-      if (this.phoneNumber.length !== 10 || !/^\d+$/.test(this.phoneNumber)) {
+      if(!this.validatePhone(this.phoneNumber)) {
         this.errorField = "Phone number"
         this.fieldError = true
+        console.log("Invalid phone")
         return
       }
       if (!this.validateForm()) {
+        console.log("Blank data in form")
         return
       }
+
+      //All validations passed
+      this.clearErrors()
 
       CaseService.createCase({
         isReferral: this.isReferral,
@@ -228,13 +257,16 @@ export default {
         category: this.category,
         gpName: this.gpName
       }).then((response) => {
+        console.log("Received response from API")
         console.log(response);
         //This is the redirect URI in case of success
         // this.$router.push('/employee')
-        console.log("Response success maybe?")
-        this.validationPassed = true
+        console.log("Checking if user already exists...")
+        //this.validationPassed = true
         this.fieldError = false
         this.formSubmitError = false
+        this.checkUserExists = true //Hardcoding for now!
+        this.showForm = false
       });
       console.log("Submit clicked!")
       console.log("isReferral: " + this.isReferral)
@@ -270,6 +302,15 @@ export default {
       this.formSubmitError = false
       this.fieldError = false
       this.dob = ''
+      this.checkUserExists = false
+      this.showForm = true
+    },
+    clearErrors() {
+      this.formSubmitError = false
+      this.fieldError = false
+      this.errorField = ''
+      this.validationPassed = false
+      this.checkUserExists = false
     },
     validateForm() {
       if (this.isReferral) {
@@ -300,6 +341,36 @@ export default {
           .match(
               /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
           );
+    },
+    validatePhone(phone) {
+      console.log("Validating phone number - " + this.phoneNumber)
+      console.log(phone.length)
+      console.log(phone.match(/^[0-9]+$/) != null)
+      if (phone.length !== 10) {
+        console.log("validatePhone failed length check")
+        return false
+      }
+      if (!(phone.match(/^[0-9]+$/) != null)) {
+        console.log("validatePhone failed content check")
+        return false
+      }
+      return true;
+    },
+    submitCaseForExistingUser() {
+      console.log("Submit case for existing user");
+      //CALL DIFFERENT API ENDPOINT HERE
+      // this.checkUserExists = false
+      this.validationPassed = true
+      this.showForm = false
+      this.formSubmitSuccess = true;
+
+    },
+    backToForm() {
+      if (this.formSubmitSuccess) {
+        this.clearForm();
+      }
+      this.showForm = true;
+      this.checkUserExists = false
     }
   }
 }
