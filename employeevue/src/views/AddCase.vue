@@ -200,6 +200,7 @@ export default {
       if (!this.validateEmail(this.email)) {
         this.errorField = "Email"
         this.fieldError = true
+        console.log("Invalid email")
         return
       }
       // if (this.phoneNumber.length !== 10 || !/^\d+$/.test(this.phoneNumber)) {
@@ -207,9 +208,18 @@ export default {
       //   this.fieldError = true
       //   return
       // }
-      if (!this.validateForm()) {
+      if(!this.validatePhone(this.phoneNumber)) {
+        this.errorField = "Phone number"
+        this.fieldError = true
+        console.log("Invalid phone")
         return
       }
+      if (!this.validateForm()) {
+        console.log("Blank data in form")
+        return
+      }
+
+      this.clearErrors()
 
       CaseService.createCase({
         isReferral: this.isReferral,
@@ -271,6 +281,11 @@ export default {
       this.fieldError = false
       this.dob = ''
     },
+    clearErrors() {
+      this.formSubmitError = false
+      this.fieldError = false
+      this.errorField = ''
+    },
     validateForm() {
       if (this.isReferral) {
         if (this.firstName.length === 0 || this.lastName.length === 0 || this.email.length === 0 || this.phoneNumber.length === 0 ||
@@ -300,6 +315,20 @@ export default {
           .match(
               /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
           );
+    },
+    validatePhone(phone) {
+      console.log("Validating phone number - " + this.phoneNumber)
+      console.log(phone.length)
+      console.log(phone.match(/^[0-9]+$/) != null)
+      if (phone.length !== 10) {
+        console.log("validatePhone failed length check")
+        return false
+      }
+      if (!(phone.match(/^[0-9]+$/) != null)) {
+        console.log("validatePhone failed content check")
+        return false
+      }
+      return true;
     }
   }
 }

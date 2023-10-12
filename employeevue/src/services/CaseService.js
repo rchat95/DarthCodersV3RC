@@ -7,7 +7,10 @@ class CaseService{
     createCase(data){
         console.log("Calling API")
         console.log(data)
-        return axios.post(CASE_API_BASE_URL, data)
+        return axios.post(CASE_API_BASE_URL, data).catch((error) => {
+            console.log("Exception!")
+            console.log(error)
+        })
     }
 }
 
