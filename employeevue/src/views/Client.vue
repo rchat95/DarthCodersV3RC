@@ -3,6 +3,7 @@
 </script>
 
 <template>
+  <h2 align="center">Welcome User!</h2>
   <button class="ui button">Add Case</button>
   <br>
   <br>
@@ -12,66 +13,57 @@
     <div class="card">
       <div class="content">
         <div class="header">CASE 1</div>
-        <div class="meta">Case Category</div>
+        <br>
+        <br>
+        <h4>Case Category</h4>
+        <div class="ui image label">
+          Anxiety
+          <i class="delete icon"></i>
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
         <div class="description">
-          <div class="ui placeholder">
-            <div class="paragraph">
-              <div class="line"></div>
-              <div class="line"></div>
-              <div class="line"></div>
-              <div class="line"></div>
-              <div class="line"></div>
-            </div>
-            <div class="paragraph">
-              <div class="line"></div>
-              <div class="line"></div>
-              <div class="line"></div>
-            </div>
-          </div>
+          <div class="meta">CREATED : 2 days ago</div>
         </div>
       </div>
     </div>
     <div class="card">
       <div class="content">
         <div class="header">CASE 2</div>
-        <div class="meta">Case Category</div>
+        <br>
+        <br>
+        <h4>Case Category</h4>
+        <div class="ui image label">
+          Stress
+          <i class="delete icon"></i>
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
         <div class="description">
-          <div class="ui placeholder">
-            <div class="paragraph">
-              <div class="line"></div>
-              <div class="line"></div>
-              <div class="line"></div>
-              <div class="line"></div>
-              <div class="line"></div>
-            </div>
-            <div class="paragraph">
-              <div class="line"></div>
-              <div class="line"></div>
-              <div class="line"></div>
-            </div>
-          </div>
+          <div class="meta">CREATED : 5 days ago</div>
         </div>
       </div>
     </div>
     <div class="card">
       <div class="content">
         <div class="header">CASE 3</div>
-        <div class="meta">Case Category</div>
+        <br>
+        <br>
+        <h4>Case Category</h4>
+        <div class="ui image label">
+          Domestic Abuse
+          <i class="delete icon"></i>
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
         <div class="description">
-          <div class="ui placeholder">
-            <div class="paragraph">
-              <div class="line"></div>
-              <div class="line"></div>
-              <div class="line"></div>
-              <div class="line"></div>
-              <div class="line"></div>
-            </div>
-            <div class="paragraph">
-              <div class="line"></div>
-              <div class="line"></div>
-              <div class="line"></div>
-            </div>
-          </div>
+          <div class="meta">CREATED : 32 days ago</div>
         </div>
       </div>
     </div>

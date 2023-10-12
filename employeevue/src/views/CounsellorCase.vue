@@ -5,7 +5,7 @@
 
 <template>
   <div class="ui centered grid container">
-<!--  <div class="ui card">-->
+    <!--  <div class="ui card">-->
     <div class="content">
       <div class="header"><h2>CASE DETAILS</h2></div>
       <div class="meta">2 days ago</div>
@@ -55,29 +55,24 @@
         </div>
 
         <br>
+        <br>
+        <div class="try">
+          <div class="ui radio checkbox">
+            <input type="radio" name="radio" checked="checked">
+            <label>Counsellor</label>
+          </div>
+          <br>
+          <div class="ui radio checkbox">
+            <input type="radio" name="radio" checked="checked">
+            <label>Not a counsellor</label>
+          </div>
 
-        <div align="left" class="grouped fields">
-          <div class="field">
-            <div class="ui radio checkbox">
-              <input type="radio" name="counsellor" v-model="isCounsellor" :value="isCounsellor" :checked="isCounsellor"
-                     v-on:click="this.isCounsellor = !this.isCounsellor;">
-              <label>Counsellor</label>
-            </div>
-          </div>
-          <div class="field">
-            <div class="ui radio checkbox">
-              <input type="radio" name="noncounsellor" v-model="isCounsellor" :value="isCounsellor"
-                     :checked="!isCounsellor"
-                     v-on:click="this.isCounsellor = !this.isCounsellor;">
-              <label>Not a Counsellor</label>
-            </div>
-          </div>
         </div>
+
         <br>
 
-        <div align="left" v-show="isCounsellor">
-          <h4>Select therapist</h4>
-          <div class="fields">
+          <h4 align="left">Select therapist</h4>
+          <div align="left" class="fields">
             <select v-model="therapistName">
               <option value="0">Name1</option>
               <option value="1">Name2</option>
@@ -92,7 +87,7 @@
               <option value="12">Name11</option>
             </select>
           </div>
-        </div>
+
         <br>
       </div>
       <br>
@@ -103,11 +98,13 @@
         </div>
         <button class="ui left floated button" type="submit">Submit Notes</button>
       </div>
-<!--    </div>-->
-  </div>
+      <!--    </div>-->
+    </div>
   </div>
 </template>
 
 <style scoped>
-
+.try{
+  float: left;
+}
 </style>

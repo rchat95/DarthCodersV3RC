@@ -11,6 +11,7 @@ import Client from "../views/Client.vue"
 
 import SignUp from "../views/SignUp.vue";
 import AddCase from "../views/AddCase.vue";
+import CounsellorCase from "@/views/CounsellorCase.vue";
 
 const routes = [
   {
@@ -38,6 +39,14 @@ const routes = [
     name: 'Client',
     component: Client
   },
+
+  {
+    path: '/counsellorCase',
+    name: 'CounsellorCase',
+    component: CounsellorCase
+
+  },
+
   {
     path: '/home',
     name: 'Home',
@@ -69,6 +78,7 @@ const routes = [
     component: EmployeeForm
     
   }
+
  
 
 ]
