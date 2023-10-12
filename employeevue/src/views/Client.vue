@@ -1,10 +1,6 @@
-<script setup>
-
-</script>
-
 <template>
   <h2 align="center">Welcome User!</h2>
-  <button class="ui button">Add Case</button>
+  <button class="ui button" @click="addCase">Add Case</button>
   <br>
   <br>
   <br>
@@ -71,6 +67,22 @@
   </div>
 
 </template>
+
+<script>
+export default {
+  name: 'Client',
+  data() {
+    return {
+
+    }
+  },
+  methods: {
+    addCase() {
+      this.$router.push('/addcase')
+    },
+  }
+}
+</script>
 
 <style scoped>
 .ui.cards {

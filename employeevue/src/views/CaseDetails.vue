@@ -56,23 +56,23 @@
 
         <br>
 
-        <div align="left" class="grouped fields">
-          <div class="field">
-            <div class="ui radio checkbox">
-              <input type="radio" name="counsellor" v-model="isCounsellor" :value="isCounsellor" :checked="isCounsellor"
-                     v-on:click="this.isCounsellor = !this.isCounsellor;">
-              <label>Counsellor</label>
-            </div>
-          </div>
-          <div class="field">
-            <div class="ui radio checkbox">
-              <input type="radio" name="noncounsellor" v-model="isCounsellor" :value="isCounsellor"
-                     :checked="!isCounsellor"
-                     v-on:click="this.isCounsellor = !this.isCounsellor;">
-              <label>Not a Counsellor</label>
-            </div>
-          </div>
-        </div>
+<!--        <div align="left" class="grouped fields">-->
+<!--          <div class="field">-->
+<!--            <div class="ui radio checkbox">-->
+<!--              <input type="radio" name="counsellor" v-model="isCounsellor" :value="isCounsellor" :checked="isCounsellor"-->
+<!--                     v-on:click="this.isCounsellor = !this.isCounsellor;">-->
+<!--              <label>Counsellor</label>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--          <div class="field">-->
+<!--            <div class="ui radio checkbox">-->
+<!--              <input type="radio" name="noncounsellor" v-model="isCounsellor" :value="isCounsellor"-->
+<!--                     :checked="!isCounsellor"-->
+<!--                     v-on:click="this.isCounsellor = !this.isCounsellor;">-->
+<!--              <label>Not a Counsellor</label>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
         <br>
 
         <div align="left" v-show="isCounsellor">

@@ -56,18 +56,18 @@
 
         <br>
         <br>
-        <div class="try">
-          <div class="ui radio checkbox">
-            <input type="radio" name="radio" checked="checked">
-            <label>Counsellor</label>
-          </div>
-          <br>
-          <div class="ui radio checkbox">
-            <input type="radio" name="radio" checked="checked">
-            <label>Not a counsellor</label>
-          </div>
+<!--        <div class="try">-->
+<!--          <div class="ui radio checkbox">-->
+<!--            <input type="radio" name="radio" checked="checked">-->
+<!--            <label>Counsellor</label>-->
+<!--          </div>-->
+<!--          <br>-->
+<!--          <div class="ui radio checkbox">-->
+<!--            <input type="radio" name="radio" checked="checked">-->
+<!--            <label>Not a counsellor</label>-->
+<!--          </div>-->
 
-        </div>
+<!--        </div>-->
 
         <br>
 
